@@ -3,15 +3,20 @@
 }
 
 .App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
   background-color: #222;
-  height: 60px;
-  padding: 20px;
+  padding: 16px;
   margin-bottom: 60px;
   color: white;
+  box-shadow: 10px 10px 20px #e5e5e5;
 }
 
 .App-title {
   font-size: 1.5em;
+  color: #222;
 }
 
 .App-intro {
@@ -21,7 +26,6 @@
 button {
   font-size: 1.2em;
   cursor: pointer;
-  box-shadow: 10px 10px 20px #e5e5e5;
   background-color: #222;
   color: white;
 }

@@ -53,17 +53,17 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Blockstack Create React App</h1>
+          <UserInfo user={this.state.person} />
+          <p style={{display: !this.state.isSignedIn ? 'none' : 'block' }}>
+            <button onClick={this.handleSignOut}>
+              Sign-out
+            </button>
+          </p>
         </header>
         <p style={{display: this.state.isSignedIn ? 'none' : 'block' }}>
+          <h1 className="App-title">BlockGPG</h1>
           <button onClick={this.handleSignIn}>
             Sign-in with Blockstack
-          </button>
-        </p>
-        <p style={{display: !this.state.isSignedIn ? 'none' : 'block' }}>
-          <UserInfo user={this.state.person} />
-          <button onClick={this.handleSignOut}>
-            Sign-out
           </button>
         </p>
       </div>

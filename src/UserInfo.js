@@ -7,7 +7,7 @@ class UserInfo extends Component {
     super(props)
 
     this.state = {
-      name: this.props.user && this.props.user.name() || 'Nameless',
+      name: this.props.user && this.props.user.name(),
       avatarUrl: this.props.user && this.props.user.avatarUrl() || undefined
     }
   }
@@ -16,7 +16,7 @@ class UserInfo extends Component {
     return (
       <div className="UserInfo">
         <img class="avatar" src={this.state.avatarUrl} />
-        <h1>{this.state.name}</h1>
+        <p class="name">{this.state.name}</p>
       </div>
     )
   }

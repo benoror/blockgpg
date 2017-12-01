@@ -1,6 +1,15 @@
+.UserInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UserInfo .name {
+  margin-left: 8px;
+}
+
 img.avatar {
-  width: 256px;
-  height: 256px;
-  border-radius: 128px;
-  box-shadow: 10px 10px 20px #e5e5e5;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
 }
