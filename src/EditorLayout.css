@@ -1,15 +1,5 @@
 .EditorLayout {
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.EditorLayout .body {
-  display: flex;
-  flex: 1;
-}
-
-.EditorLayout .content {
   flex: 1;
 }
 
@@ -20,3 +10,20 @@
   order: -1;
 }
 
+.EditorLayout .content {
+	text-align: left;
+  flex: 1;
+  border: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.EditorLayout .public-DraftEditorPlaceholder-root,
+.EditorLayout .public-DraftEditor-content {
+  padding: 15px;
+}
+
+.EditorLayout .public-DraftEditor-content {
+  min-height: 100px;
+}

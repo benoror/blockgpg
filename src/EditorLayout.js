@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Editor, EditorState} from 'draft-js';
 
 import './EditorLayout.css';
 
@@ -7,18 +8,24 @@ class EditorLayout extends Component {
     super(props)
 
     this.state = {
-      isSignedIn: props.isSignedIn
+      isSignedIn: props.isSignedIn,
+      editorState: EditorState.createEmpty()
     }
+
+    this.onChange = (editorState) => this.setState({editorState})
   }
 
   render() {
     if(this.state.isSignedIn) {
       return (
-        <div class="EditorLayout">
-          <div class="body">
-            <main class="content">Content</main>
-            <nav class="nav">Nav</nav>
-          </div>
+        <div className="EditorLayout">
+            <main className="content">
+              <Editor
+                editorState={this.state.editorState}
+                onChange={this.onChange}
+              />
+            </main>
+            <nav className="nav">Nav</nav>
         </div>
       )
     } else {

@@ -15,8 +15,8 @@ class UserInfo extends Component {
   render() {
     return (
       <div className="UserInfo">
-        <img class="avatar" src={this.state.avatarUrl} />
-        <p class="name">{this.state.name}</p>
+        <img className="avatar" src={this.state.avatarUrl} />
+        <p className="name">{this.state.name}</p>
       </div>
     )
   }
