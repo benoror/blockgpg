@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import UserInfo from './UserInfo';
+import EditorLayout from './EditorLayout';
 
 const blockstack = require('blockstack');
 
@@ -66,6 +67,9 @@ class App extends Component {
             Sign-in with Blockstack
           </button>
         </p>
+
+        <EditorLayout isSignedIn={this.state.isSignedIn} />
+
       </div>
     )
   }
