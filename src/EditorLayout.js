@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Editor, EditorState} from 'draft-js';
+import {Editor, EditorState, ContentState} from 'draft-js';
 
 import './EditorLayout.css';
+
+const blockstack = require('blockstack');
 
 class EditorLayout extends Component {
   constructor(props) {
@@ -12,7 +14,28 @@ class EditorLayout extends Component {
       editorState: EditorState.createEmpty()
     }
 
-    this.onChange = (editorState) => this.setState({editorState})
+    if(props.isSignedIn) {
+      this.loadFile()
+    }
+
+    this.onChange = this.onChange.bind(this)
+  }
+
+  loadFile() {
+    blockstack.getFile('/untitled.asc').then((file) => {
+      const content = ContentState.createFromText(file)
+      this.setState({
+        editorState: EditorState.createWithContent(content)
+      })
+    })
+  }
+
+  onChange(editorState) {
+    const content = editorState.getCurrentContent().getPlainText()
+    this.setState({editorState})
+    blockstack.putFile('/untitled.asc', content).then(() => {
+      console.log('Saved!')
+    })
   }
 
   render() {
