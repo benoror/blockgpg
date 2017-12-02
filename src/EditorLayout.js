@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Spinner from './Spinner';
 import {Editor, EditorState, ContentState} from 'draft-js';
+import debounce from 'lodash/debounce';
 
 import './EditorLayout.css';
 
@@ -20,6 +21,9 @@ class EditorLayout extends Component {
     }
 
     this.onChange = this.onChange.bind(this)
+    this.saveContent = debounce((content) => {
+      this.saveFile(content.getPlainText())
+    }, 1000)
   }
 
   loadFile() {
@@ -40,7 +44,7 @@ class EditorLayout extends Component {
 
     if (currentContent !== newContent) {
       // Content has changed
-      this.saveFile(newContent.getPlainText())
+      this.saveContent(newContent)
     }
   }
 
