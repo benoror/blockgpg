@@ -14,15 +14,20 @@
 .EditorLayoutFlex .content {
 	text-align: left;
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #ffD200;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px #FFFAE6 inset, 0 0 8px #ffed99;
   cursor: text;
   font-size: 16px;
   margin: 10px;
+  background: linear-gradient(to bottom, #FFFAE6 20px, #eee 1px);
+  background-size: 100% 21px;
+  line-height: 21px;
 }
 
 .EditorLayoutFlex .public-DraftEditorPlaceholder-root,
 .EditorLayoutFlex .public-DraftEditor-content {
-  padding: 15px;
+  padding: 22px 15px 15px 15px;
 }
 
 .EditorLayoutFlex .public-DraftEditor-content {
