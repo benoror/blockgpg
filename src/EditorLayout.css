@@ -8,7 +8,6 @@
   flex: 0 0 12em;
   /* put the nav on the left */
   order: -1;
-  margin: 10px;
 }
 
 .EditorLayoutFlex .content {

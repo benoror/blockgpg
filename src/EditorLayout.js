@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from './Spinner';
+import FileList from './FileList';
 import {Editor, EditorState, ContentState} from 'draft-js';
 import debounce from 'lodash/debounce';
 
@@ -72,6 +73,7 @@ class EditorLayout extends Component {
               />
             </main>
             <nav className="nav">
+              <FileList />
             </nav>
           </div>
         </div>

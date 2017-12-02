@@ -1,0 +1,12 @@
+.FileList {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.FileList ul {
+  padding: 0;
+  margin: 10px 0 0 10px;
+}
