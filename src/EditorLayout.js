@@ -33,14 +33,20 @@ class EditorLayout extends Component {
   }
 
   onChange(editorState) {
-    const content = editorState.getCurrentContent().getPlainText()
+    const currentContent = this.state.editorState.getCurrentContent()
+    const newContent = editorState.getCurrentContent()
+
     this.setState({editorState})
-    this.saveContents(content)
+
+    if (currentContent !== newContent) {
+      // Content has changed
+      this.saveFile(newContent.getPlainText())
+    }
   }
 
-  saveContents(content) {
+  saveFile(text) {
     this.setState({ isLoading: true })
-    return blockstack.putFile('/untitled.asc', content).then(() => {
+    return blockstack.putFile('/untitled.asc', text).then(() => {
       this.setState({ isLoading: false })
       console.log('Saved!')
     })
