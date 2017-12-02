@@ -16,14 +16,16 @@ class EditorLayout extends Component {
       isLoading: true
     }
 
-    if(props.isSignedIn) {
-      this.loadFile()
-    }
-
     this.onChange = this.onChange.bind(this)
     this.saveContent = debounce((content) => {
       this.saveFile(content.getPlainText())
     }, 1000)
+  }
+
+  componentDidMount() {
+    if(this.props.isSignedIn) {
+      this.loadFile()
+    }
   }
 
   loadFile() {
