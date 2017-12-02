@@ -1,16 +1,17 @@
-.EditorLayout {
+.EditorLayoutFlex {
   display: flex;
   flex: 1;
 }
 
-.EditorLayout .nav {
+.EditorLayoutFlex .nav {
   /* 12em is the width of the columns */
   flex: 0 0 12em;
   /* put the nav on the left */
   order: -1;
+  margin: 10px;
 }
 
-.EditorLayout .content {
+.EditorLayoutFlex .content {
 	text-align: left;
   flex: 1;
   border: 1px solid #ddd;
@@ -19,11 +20,11 @@
   margin: 10px;
 }
 
-.EditorLayout .public-DraftEditorPlaceholder-root,
-.EditorLayout .public-DraftEditor-content {
+.EditorLayoutFlex .public-DraftEditorPlaceholder-root,
+.EditorLayoutFlex .public-DraftEditor-content {
   padding: 15px;
 }
 
-.EditorLayout .public-DraftEditor-content {
+.EditorLayoutFlex .public-DraftEditor-content {
   min-height: 100px;
 }
