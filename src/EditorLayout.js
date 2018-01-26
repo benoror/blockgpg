@@ -36,6 +36,8 @@ class EditorLayout extends Component {
         editorState: EditorState.createWithContent(content),
         isLoading: false
       })
+    }).catch((e) => {
+      console.log('Exception: ', e)
     })
   }
 
@@ -51,11 +53,13 @@ class EditorLayout extends Component {
     }
   }
 
-  saveFile(text) {
+  saveFile(text, options = {}) {
     this.setState({ isLoading: true })
-    return blockstack.putFile('/untitled.asc', text).then(() => {
+    return blockstack.putFile('/untitled.asc', text, options).then(() => {
       this.setState({ isLoading: false })
       console.log('Saved!')
+    }).catch((e) => {
+      console.log('Exception: ', e)
     })
   }
 
